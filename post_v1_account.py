@@ -1,7 +1,4 @@
 import requests
-import json
-
-
 
 def post_v1_account():
     """
@@ -29,4 +26,6 @@ def post_v1_account():
         json=payload
     )
     return response
+
+
 
