@@ -1,12 +1,12 @@
 import requests
 
 
-def get_v1_account():
+def delete_v1_account_login_all():
     """
-    Get current user
+    Logout from every device
     :return:
     """
-    url = "http://localhost:5051/v1/account"
+    url = "http://localhost:5051/v1/account/login/all"
 
     headers = {
         'X-Dm-Auth-Token': '<string>',
@@ -15,9 +15,10 @@ def get_v1_account():
     }
 
     response = requests.request(
-        method="GET",
+        method="DELETE",
         url=url,
         headers=headers
-    )
+     )
     return response
+
 
