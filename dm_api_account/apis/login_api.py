@@ -10,7 +10,8 @@ class LoginApi:
         self.host = host
         self.headers = headers
         self.session = session()
-        self.session.headers = headers
+        if headers:
+            self.session.headers.update(headers)
 
     def post_v1_account_login(self, json: login_credentials_model, **kwargs) -> Response:
         """

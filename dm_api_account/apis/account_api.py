@@ -7,13 +7,12 @@ from ..models.change_email_model import change_email_model
 from ..models.change_password_model import change_password_model
 
 
-
 class AccountApi:
     def __int__(self, host, headers=None):
         self.host = host
-        self.headers = headers
         self.session = session()
-        self.session.headers = headers
+        if headers:
+            self.session.headers.update(headers)
 
     def post_v1_account(self, json: registration_model, **kwargs) -> Response:
         """
