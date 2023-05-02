@@ -6,7 +6,7 @@ from ..models.login_credentials_model import login_credentials_model
 
 class LoginApi:
 
-    def __int__(self, host, headers=None):
+    def __init__(self, host, headers=None):
         self.host = host
         self.headers = headers
         self.session = session()
