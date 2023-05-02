@@ -1,4 +1,4 @@
-change_password_model= {
+change_password_model = {
     "login": "<string>",
     "token": "<uuid>",
     "oldPassword": "<string>",
