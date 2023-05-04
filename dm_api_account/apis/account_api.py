@@ -72,7 +72,7 @@ class AccountApi:
         )
         return response
 
-    def put_v1_account_token(self, token: str, **kwargs):
+    def put_v1_account_token(self, token: str, **kwargs) -> Response:
         """
         Activate registered user
         :return:
@@ -84,7 +84,7 @@ class AccountApi:
         )
         return response
 
-    def get_v1_account(self, **kwargs):
+    def get_v1_account(self, **kwargs) -> Response:
         """
         Get current user
         :return:

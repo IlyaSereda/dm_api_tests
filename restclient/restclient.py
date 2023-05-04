@@ -20,6 +20,9 @@ class Restclient:
     def get(self, path: str, **kwargs) -> Response:
         return self._send_request('Get', path, **kwargs)
 
+    def put(self, path: str, **kwargs) -> Response:
+        return self._send_request('PUT', path, **kwargs)
+
     def delete(self, path: str, **kwargs) -> Response:
         return self._send_request('DELETE', path, **kwargs)
 
