@@ -26,7 +26,7 @@ class Restclient:
     def delete(self, path: str, **kwargs) -> Response:
         return self._send_request('DELETE', path, **kwargs)
 
-    def _send_request(self, method, path, **kwargs):
+    def _send_request(self, method, path, **kwargs) -> Response:
         full_url = self.host + path
         log = self.log.bind(event_id=str(uuid.uuid4()))
         log.msg(
