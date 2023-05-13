@@ -1,7 +1,7 @@
 from enum import Enum
 from typing import List, Optional
 from pydantic import BaseModel, StrictStr, Field, ConstrainedDate
-
+from __future__ import annotations
 
 class Roles(Enum):
     GUEST = 'Guest'
@@ -31,6 +31,6 @@ class User(BaseModel):
     registration: Optional[ConstrainedDate]
 
 
-class UserEnvelopModel(BaseModel):
+class UserEnvelop(BaseModel):
     resource: User
     metadata: Optional[StrictStr]

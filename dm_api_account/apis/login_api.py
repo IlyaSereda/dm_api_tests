@@ -1,7 +1,5 @@
-import requests
 from requests import Response
-from requests import session
-from ..models.login_credentials_model import login_credentials_model
+from ..models import *
 from restclient.restclient import Restclient
 
 
@@ -13,7 +11,7 @@ class LoginApi:
         if headers:
             self.client.session.heasers.update(headers)
 
-    def post_v1_account_login(self, json: login_credentials_model, **kwargs) -> Response:
+    def post_v1_account_login(self, json: LoginCredentials, **kwargs) -> Response:
         """
         :para, json: login_credentials_model
         Authenticate via credentials
@@ -22,7 +20,7 @@ class LoginApi:
 
         response = self.client.post(
             path=f"/v1/account/login",
-            json=json,
+            json=json.dict(),
             **kwargs
         )
         return response
