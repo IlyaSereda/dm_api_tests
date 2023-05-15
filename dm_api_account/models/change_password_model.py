@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel, StrictStr, Field, Extra
-from __future__ import annotations
+from uuid import UUID
 
 class ChangePassword(BaseModel):
     class Config:

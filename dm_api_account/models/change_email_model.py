@@ -1,6 +1,5 @@
 from typing import Optional
 from pydantic import BaseModel, StrictStr, Field, Extra
-from __future__ import annotations
 
 class ChangeEmail(BaseModel):
     class Config:

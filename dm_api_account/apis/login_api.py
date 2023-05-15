@@ -1,6 +1,7 @@
 from requests import Response
 from ..models import *
 from restclient.restclient import Restclient
+from dm_api_account.utilities import validate_request_json, validate_status_code
 
 
 class LoginApi:
@@ -11,7 +12,7 @@ class LoginApi:
         if headers:
             self.client.session.heasers.update(headers)
 
-    def post_v1_account_login(self, json: LoginCredentials, **kwargs) -> Response:
+    def post_v1_account_login(self, json: LoginCredentials, status_code: int = 200, **kwargs) -> Response:
         """
         :para, json: login_credentials_model
         Authenticate via credentials
@@ -20,9 +21,10 @@ class LoginApi:
 
         response = self.client.post(
             path=f"/v1/account/login",
-            json=json.dict(),
+            json=validate_request_json(json),
             **kwargs
         )
+        validate_status_code(response, status_code)
         return response
 
     def delete_v1_account_login(self, **kwargs) -> Response:
