@@ -1,7 +1,6 @@
 from requests import Response
 from restclient.restclient import Restclient
 from ..models import *
-from dm_api_account.models.user_envelope_model import UserEnvelope
 from dm_api_account.utilities import validate_request_json, validate_status_code
 
 
